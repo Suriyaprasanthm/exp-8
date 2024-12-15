@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Person{
+    char *name;
+    int age;
+};
+int main()
+{
+    struct Person *details;
+    int length;
+    details=(struct Person *)malloc(sizeof(struct Person));
+    if (details == NULL)
+    {
+        printf("Memory allocation for structure failed!\n");
+        return 1;
+    }
+        printf("Enter the length of the name: ");
+        scanf("%d",&length);
+        
+        details->name=(char*)malloc((length)*sizeof(char));
+        if (details->name == NULL)
+        {
+        printf("Memory allocation for name failed!\n");
+        return 1;
+        }
+    printf("Enter the name: ");
+    scanf("%s",details->name);
+
+    printf("Enter the age: ");
+    scanf("%d", &details->age);
+
+    
+    printf("Person Details\n");
+    printf("Name: %s\n", details->name);
+    printf("Age: %d\n", details->age);
+
+    return 0;
+
+}
