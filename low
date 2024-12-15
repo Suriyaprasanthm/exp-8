@@ -1,0 +1,16 @@
+#include <stdio.h>
+union pack{
+    char a;
+    int b;
+    double c;
+};
+void main()
+{
+    
+    union pack col;
+    col.a='A';
+    col.b=10;
+    col.c=12345.679;
+    printf("Occpied size by union pack:%d\n",sizeof(col));
+    printf("Value of a:%c , b:%d , c:%lf",col.a,col.b,col.c);
+}
