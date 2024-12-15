@@ -1,0 +1,27 @@
+#include <stdio.h>
+union temperature
+{
+    float cel;
+    float fahren;
+};
+void main()
+{
+    union temperature temp;
+    int n;
+    printf("Enter celsius(1) or fahrenheit(2)");
+    scanf("%d",&n);
+    if(n==1)
+    {
+        printf("Enter temperature in celsius:");
+        scanf("%f",&temp.cel);
+        printf("celsius:%f",temp.cel);
+        printf("fahrenheit:%f",(temp.cel*1.8)+32);
+    }
+    if(n==2)
+    {
+        printf("Enter temperature in fahrenheit:");
+        scanf("%f",&temp.fahren);
+        printf("celsius:%f",(temp.fahren-32)/1.8);
+        printf("fahrenheit:%f",temp.fahren);
+    }
+}
